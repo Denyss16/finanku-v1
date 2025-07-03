@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@layer utilities {
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .animate-slide-in {
+    animation: slide-in 0.5s forwards ease-out;
+  }
+}
+
+/* Paksa jarak antar paragraf markdown di .prose */
+.prose p {
+  margin-bottom: 1.25em !important;
+}
+
+/* Paksa semua heading markdown tampil bold */
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  font-weight: 700 !important;
+}
+
+/* Heading markdown lebih besar dari paragraf */
+.prose h1 { font-size: 2.25em !important; }
+.prose h2 { font-size: 1.75em !important; }
+.prose h3 { font-size: 1.35em !important; }
+.prose h4 { font-size: 1.1em !important; }
